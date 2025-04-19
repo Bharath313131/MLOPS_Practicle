@@ -5,8 +5,8 @@ import os
 from helper_functions import log_info, log_error
 
 # Define paths
-ARTIFACTS_PATH = "D:/MLOPS-2025-DSC/mlops2025-DSC/Artifacts"
-DATA_OUTPUT_PATH = "D:/MLOPS-2025-DSC/mlops2025-DSC/Data/output"
+ARTIFACTS_PATH = "C:/Users/Admin/Documents/1BM22AI027_MLOPS/Practical/MLOPS_Practicle/Artifacts"
+DATA_OUTPUT_PATH = "C:/Users/Admin/Documents/1BM22AI027_MLOPS/Practical/MLOPS_Practicle"
 os.makedirs(DATA_OUTPUT_PATH, exist_ok=True)
 MODEL_PATH = os.path.join(ARTIFACTS_PATH, "best_classifier.pkl")
 PIPELINE_PATH = os.path.join(ARTIFACTS_PATH, "data_processing_pipeline.pkl")
@@ -87,7 +87,7 @@ elif page == "Batch Prediction":
             df['Predicted Risk Category'] = label_encoder.inverse_transform(predictions)
             
             # Save the batch predictions to the output folder
-            output_file = os.path.join(DATA_OUTPUT_PATH, "batch_predictions.csv")
+            output_file = os.path.join(DATA_OUTPUT_PATH, "batch_predictions_out.csv")
             df.to_csv(output_file, index=False)
             
             st.write(df)
